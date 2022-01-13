@@ -1,0 +1,485 @@
+//--------------------------------------------------VARIABLES-------------------------------------------------
+//--------------------------------------------------COLORES---------------------------------------------------
+
+$color1: rgb(0, 0, 0);
+$color2: rgb(255, 255, 255);
+$color3: rgb(65, 65, 65);
+$color4: rgb(108, 175, 153);
+//-------------------------------------------------FUENTE------------------------------------------------------
+$fuente1: 'Oswald', sans-serif;
+//------------------------------------------------TAMAÑO FUENTE------------------------------------------------
+$tfuente1: 30px;
+$tfuente2: 25px;
+$tfuente3: 16px;
+$tfuente4: 12px;
+//-------------------------------------------------------------------------------------------------------------
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $fuente1;
+	font-weight: 200;
+
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+a {
+	text-decoration: none;
+	color: $color1;
+}
+
+.contenedor {
+	background-color: $color2;
+	width: 100%;
+	margin: auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas:
+		'header			header   	header'
+		'destacado		destacado 	destacado'
+		'contenido		contenido 	aside'
+		'footer	 		footer 		footer';
+}
+
+/* ---------- HEADER ----------*/
+.header {
+	grid-area: header;
+	background: $color2;
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
+}
+
+.logo-container {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	
+	
+}
+
+
+.logo-titulo {
+	color: $color1;
+	text-transform: uppercase;
+	letter-spacing: 21px;
+	justify-content: center;
+	font-size: $fuente1;
+	
+
+}
+
+.menu {
+	border-top: 1px solid $color3;
+	display: flex;
+	justify-content: center;
+	
+
+}
+
+.menu a {
+	
+	color: $color1;
+	display: flex;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 400;
+	width: fit-content;
+	justify-content: center;
+	transition: 0.1s ease-in-out;
+	font-size: $tfuente3;
+	letter-spacing: 4px;
+}
+
+.menu a:hover {
+	color: $color4;
+	transform: scale(1.2);
+
+}
+.menu .menuselect{
+	color: $color4;
+	transform: scale(1.2);
+}
+
+/* ---------- Articulos ----------*/
+.articulo {
+	display: flex;
+	background: $color2;
+	border: solid 1px $color1;
+}
+
+.articulo .contenedor-texto {
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	max-height: 600px;
+}
+
+.contenedor-imagen {
+	width: 30%;
+}
+
+.articulo .titulo a {
+	margin-bottom: 10px;
+	font-size: $tfuente2;
+	font-weight: 100;
+	color: $color1;
+
+}
+
+
+/* ---------- Articulo Destacado ----------*/
+.destacado {
+	margin-top: 10px;
+}
+
+.articulo.destacado {
+	grid-area: destacado;
+	color: $color2;
+	background-color: $color3;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	font-size: $tfuente4;
+	line-height: $tfuente2;
+	margin-top: 70px;
+
+}
+
+.articulo.destacado .contenedor-imagen {
+	min-height: 100%;
+	width: 100%;
+}
+
+
+.destacado .titulo a {
+	color: $color2;
+	font-size: $tfuente1;
+}
+
+
+.btn-link {
+	color: $color2;
+	display: inline-block;
+	padding: 10px;
+	background-color: $color1;
+	font-size: $tfuente4;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	align-self: flex-end;
+	transition: 0.3s;
+}
+
+.btn-link:hover {
+	background: $color3;
+	text-decoration: none;
+	color: $color4;
+}
+
+.btn-link1 {
+	color: $color1;
+	display: inline-block;
+	padding: 10px;
+	background-color: $color2;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	align-self: flex-end;
+	transition: 0.3s;
+}
+
+.btn-link1:hover {
+	text-decoration: none;
+	color: $color4;
+	background-color: $color1;
+
+}
+
+/*---------- CONTENIDO ----------*/
+.contenido {
+	grid-area: contenido;
+	display: grid;
+	grid-template-columns: 1;
+	grid-gap: 20px;
+}
+
+/*---------- SIDEBAR ----------*/
+.sidebar {
+	padding: 25px;
+	text-align: center;
+	min-height: 100px;
+	grid-area: aside;
+	background: $color1;
+	color: $color3;
+}
+
+.img-reseñas {
+	border-radius: 100%;
+	height: 100px;
+	width: 100px;
+	margin-bottom: 25px;
+}
+
+
+.sidebar .menu-sidebar {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: $color1;
+	justify-items: flex-end;
+
+}
+
+.sidebar .menu-sidebar a {
+	padding: 25px;
+	color: $color2;
+	background-color: $color1;
+	display: flex;
+	font-size: $tfuente3;
+	text-transform: uppercase;
+	justify-content: center;
+	transition: 0.5s;
+	text-decoration: none;
+}
+
+.sidebar .menu-sidebar a:hover {
+	background: $color3;
+}
+
+/*---------- FOOTER ----------*/
+.footer {
+	background: $color3;
+	font-size: 12px;
+	grid-area: footer;
+	padding: 25px;
+	text-align: left;
+	color: $color2;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+}
+
+span {
+	color:$color4;
+}
+.btn-redes-container{
+	background-size: cover;
+	height: 20px;
+	width: 100px;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.btn-redes img{
+	height: 20px;
+	width: 20px;
+	transition: 0.2s ease-in-out;
+
+	
+}
+.btn-redes img:hover{
+	transform: scale(1.5);
+	
+
+}
+/* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE:  200-760px ++++++++++++++++++++++++++++++ */
+/* ----------------------------------------INICIO------------------------------------------------- */
+
+@media only screen and (min-width: 200px) and (max-width: 760px) {
+	.body {
+		font-size: 16px;
+	}
+
+	.contenedor {
+		background-color: $color2;
+		width: 100%;
+		margin: auto;
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(5, auto);
+		grid-template-areas:
+			'header			header   	header'
+			'destacado		destacado 	destacado'
+			'contenido		contenido 	contenido'
+			'aside		    aside 	    aside'
+			'footer	 		footer 		footer';
+	}
+
+
+	.menu{
+		display: none;
+	
+	}
+	.header {
+		grid-area: header;
+		background: $color2;
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		display: flex;
+		flex-direction: column;
+		font-family: $fuente1;
+		letter-spacing: 7px;
+		opacity: 100%;
+	
+	
+	}
+	.mobile-menu{
+		z-index: 2 !important;
+	}
+	.nav-item{
+		letter-spacing: 0px;
+	}
+
+	.nav-link:hover {
+		color: $color4 !important;
+		
+	
+	}
+	.logo-container{
+		display: none;
+	}
+	.articulo {
+		display: flex;
+		background: $color2;
+	}
+	
+	.articulo .contenedor-texto {
+		padding: 20px;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+	}
+	
+	.contenedor-imagen {
+		width: 100%;
+	}
+	
+	.articulo .titulo a {
+		margin-bottom: 10px;
+		font-size: $tfuente2;
+		font-weight: 100;
+		color: $color1;
+	
+	}
+
+	/* ---------- Articulo Destacado ----------*/
+	.destacado {
+		margin-top: 10px;
+	}
+
+
+	.destacado .titulo::after {
+		content: '';
+		display: flex;
+		background-color: $color3;
+		width: fit-content;
+		
+	}
+	.articulo.destacado {
+		grid-area: destacado;
+		color: $color2;
+		background-color: $color3;
+		display: flex;
+		flex-direction: column;
+		font-size: $tfuente4;
+		margin-top: 50px;
+		
+	
+	}
+	.destacado .titulo a {
+		color: $color2;
+		font-size: $tfuente2;
+	}
+	.articulo.destacado .contenedor-imagen {
+		min-height: fit-content;
+		width: 100%;
+}
+
+	
+
+	/*---------- SIDEBAR ----------*/
+	.sidebarimg {
+		padding: 25px;
+		text-align: center;
+		min-height: 100px;
+		grid-area: aside;
+		background-image: url(../img/item6.jpg);
+		background-size: cover;
+		background-position-x: 50%;
+		background-position-y: 65%;
+
+	}
+}
+/* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE: 761-1380px ++++++++++++++++++++++++++++++ */
+/* ------------------------------------------------INICIO--------------------------------------------- */
+
+
+
+@media only screen and (min-width: 761px) and (max-width: 1380px) {
+	.body {
+		font-size: 16px;
+	}
+
+	.contenedor {
+		font-size: 16px;
+	}
+	
+	.mobile-menu{
+		display:none;
+	}
+	.menu a {
+		padding: 10px;
+		color: $color1;
+		display: flex;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		width: 14%;
+		justify-content: center;
+		transition: 0.3s ease all;
+		font-size: $tfuente4;
+	}
+	/* ---------- Articulo Destacado ----------*/
+.destacado {
+	margin-top: 130px;
+}
+
+.articulo.destacado {
+	grid-area: destacado;
+	color: $color2;
+	background-color: $color3;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	font-size: $tfuente3;
+	line-height: $tfuente2;
+
+}
+
+.destacado .titulo a {
+	color: $color2;
+	font-size: $tfuente1;
+}
+}
